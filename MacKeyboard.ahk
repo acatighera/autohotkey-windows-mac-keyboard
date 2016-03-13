@@ -51,6 +51,9 @@ F19::Run https://facebook.com
 ; OS X system shortcuts
 ; --------------------------------------------------------------
 
+; search
+#Space::#s
+
 ; Make Ctrl + S work with cmd (windows) key
 #s::^s
 
@@ -81,18 +84,31 @@ F19::Run https://facebook.com
 ; New tab
 #t::^t
 
+; switch tab
+#+]::Send {Ctrl down}{tab}{Ctrl up}
+
+#+[::^+Tab
+
 ; close tab
 #w::^w
+
+; refresh page
+#r::^r
+
+; location
+#l::^l
 
 ; Close windows (cmd + q to Alt + F4)
 #q::Send !{F4}
 
 ; Remap Windows + Tab to Alt + Tab.
-Lwin & Tab::AltTab
+<#Tab::AltTab
 
 ; minimize windows
 #m::WinMinimize,a
 
+; block start menu shortcut
+LWin::Return
 
 ; --------------------------------------------------------------
 ; OS X keyboard mappings for special chars
@@ -147,10 +163,10 @@ Lwin & Tab::AltTab
 ; --------------------------------------------------------------
 ; Custom mappings for special chars
 ; --------------------------------------------------------------
-;
+
 ;#ö::SendInput {[} 
 ;#ä::SendInput {]} 
-;
+
 ;^ö::SendInput {{} 
 ;^ä::SendInput {}} 
 
@@ -169,4 +185,3 @@ Lwin & Tab::AltTab
 #!u::Send ^u
 
 #IfWinActive
-
